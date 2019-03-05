@@ -11,6 +11,9 @@
 */
 
 import PackageDescription
+import Foundation
+
+let ownerName = ProcessInfo.processInfo.environment["EXAMPLE_VAR_OWNER_NAME"] ?? "apple"
 
 let package = Package(
     name: "DeckOfPlayingCards",
@@ -18,7 +21,7 @@ let package = Package(
         .library(name: "DeckOfPlayingCards", targets: ["DeckOfPlayingCards"]),
     ],
     dependencies: [
-        .package(url: "https://github.com/apple/example-package-fisheryates.git", from: "2.0.0"),
+        .package(url: "https://github.com/\(ownerName)/example-package-fisheryates.git", from: "2.0.0"),
         .package(url: "https://github.com/apple/example-package-playingcard.git", from: "3.0.0"),
     ],
     targets: [
